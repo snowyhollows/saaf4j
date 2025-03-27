@@ -5,9 +5,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.ScriptInjector;
 import com.google.gwt.user.client.Window;
 import net.snowyhollows.saaf4j.core.AdaptiveAudio;
-import net.snowyhollows.saaf4j.core.AudioBank;
-import net.snowyhollows.saaf4j.core.AudioCue;
-import net.snowyhollows.saaf4j.core.AudioFloatParameter;
+import net.snowyhollows.saaf4j.core.Bank;
+import net.snowyhollows.saaf4j.core.Cue;
+import net.snowyhollows.saaf4j.core.Param;
 
 import java.io.InputStream;
 
@@ -33,22 +33,22 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
     }
 
     @Override
-    public AudioBank loadBank(String bank) {
+    public Bank loadBank(String bank) {
         return null;
     }
 
     @Override
-    public AudioBank loadBank(InputStream bankStream) {
+    public Bank loadBank(InputStream bankStream) {
         return null;
     }
 
     @Override
-    public AudioCue getCue(String path) {
+    public Cue getCue(String path) {
         return null;
     }
 
     @Override
-    public AudioFloatParameter getGlobalParam(String path) {
+    public Param getGlobalParam(String path) {
         return null;
     }
 

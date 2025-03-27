@@ -4,13 +4,11 @@ import java.io.InputStream;
 
 public interface AdaptiveAudio {
 
-    AudioBank loadBank(String bankPath);
+    Bank loadBank(InputStream bankStream);
 
-    AudioBank loadBank(InputStream bankStream);
+    Cue getCue(String path);
 
-    AudioCue getCue(String path);
-
-    AudioFloatParameter getGlobalParam(String path);
+    Param getGlobalParam(String path);
 
     boolean isReady();
 

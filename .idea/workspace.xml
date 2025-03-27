@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e2ba066-4d87-4681-be67-d31368135338" name="Changes" comment="" />
+    <list default="true" id="4e2ba066-4d87-4681-be67-d31368135338" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-core/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-core/src/main/java/net/snowyhollows/saaf4j/core/AdaptiveAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-core/src/main/java/net/snowyhollows/saaf4j/core/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-core/src/main/java/net/snowyhollows/saaf4j/core/Cue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-core/src/main/java/net/snowyhollows/saaf4j/core/Param.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-core/src/main/resources/net/snowyhollows/saaf4j/saaf4jcore.gwt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-desktop/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/java/net/snowyhollows/saaf4j/gwt/FMOD_Studio_EventDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/java/net/snowyhollows/saaf4j/gwt/FMOD_Studio_EventInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/java/net/snowyhollows/saaf4j/gwt/FMOD_System.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/java/net/snowyhollows/saaf4j/gwt/FmodGwtAdaptiveAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/java/net/snowyhollows/saaf4j/gwt/HtmlSoundManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/java/net/snowyhollows/saaf4j/gwt/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/resources/net/snowyhollows/saaf4j/public/scripts/fmodstudio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/resources/net/snowyhollows/saaf4j/public/scripts/fmodstudio.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaf4j-fmod-gwt/src/main/resources/net/snowyhollows/saaf4j/saaf4jfmod.gwt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,18 +73,27 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2uoyn3EsAUnCTjO41WlLPfGuWV1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
@@ -165,11 +204,22 @@
       <workItem from="1742929386728" duration="10565000" />
       <workItem from="1743017019428" duration="1956000" />
       <workItem from="1743030562251" duration="1432000" />
-      <workItem from="1743097998783" duration="377000" />
+      <workItem from="1743097998783" duration="705000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

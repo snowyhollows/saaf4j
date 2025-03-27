@@ -1,6 +1,6 @@
 package net.snowyhollows.saaf4j.core;
 
-public interface AudioCue {
+public interface Cue {
     void in();
     void out();
 }

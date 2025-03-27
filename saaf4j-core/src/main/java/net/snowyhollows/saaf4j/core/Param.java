@@ -1,5 +1,5 @@
 package net.snowyhollows.saaf4j.core;
 
-public interface AudioFloatParameter {
+public interface Param {
 
 }
