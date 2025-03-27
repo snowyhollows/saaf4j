@@ -1,0 +1,5 @@
+rootProject.name = 'saaf4j'
+include 'saaf4j-core'
+include 'saaf4j-fmod-desktop'
+include 'saaf4j-fmod-gwt'
+

@@ -1,0 +1,45 @@
+group = 'net.snowyhollows.saaf4j'
+version = '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+
+    task sourceJar(type: Jar) {
+        dependsOn compileJava
+        from sourceSets.main.allJava
+        from layout.buildDirectory.dir("generated/sources/annotationProcessor/java/main")
+        archiveClassifier = 'sources'
+    }
+
+    artifacts {
+        archives sourceJar
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    publishing {
+        publications {
+            corePublication(MavenPublication) {
+                from components.java
+                artifact sourceJar
+
+                groupId rootProject.getGroup()
+                artifactId project.name
+                version rootProject.getVersion()
+            }
+        }
+    }
+}
+
+task clean(type: Delete, group: 'build') {
+    delete 'build'
+}
