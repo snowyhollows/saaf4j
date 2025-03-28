@@ -9,4 +9,7 @@ public class FMOD_System {
     public static native void getEvent(String path, Result<FMOD_Studio_EventDescription> result);
 
     public static native void setParameterByName(String path, float value, boolean ignoreSeekSpeed);
+
+    // load bank from array
+    public static native void loadBank(String path, byte[] data, int mode, Result<FMOD_Studio_Bank> result);
 }
