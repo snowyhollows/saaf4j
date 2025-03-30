@@ -13,6 +13,6 @@ public class Result<T> {
     public Result() {
     }
 
-    @JsProperty native T getVal();
-    @JsProperty native void setVal(T val);
+    @JsProperty public native T getVal();
+    @JsProperty public native void setVal(T val);
 }
