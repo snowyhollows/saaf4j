@@ -5,10 +5,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.ScriptInjector;
 import com.google.gwt.typedarrays.shared.Uint8Array;
 import com.google.gwt.user.client.Timer;
-import net.snowyhollows.saaf4j.core.AdaptiveAudio;
-import net.snowyhollows.saaf4j.core.Bank;
-import net.snowyhollows.saaf4j.core.Cue;
-import net.snowyhollows.saaf4j.core.Param;
+import net.snowyhollows.saaf4j.core.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,7 +32,7 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
         if (state == State.NOT_READY) {
             state = State.INITIALIZING;
             ScriptInjector.fromUrl(GWT.getModuleBaseForStaticFiles() + "scripts/fmodstudio.js")
-                    .setCallback(new Callback<>() {
+                    .setCallback(new Callback<Void, Exception>() {
                         @Override
                         public void onFailure(Exception reason) {
                             state = State.ERROR;
@@ -104,7 +101,7 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
     }-*/;
 
     @Override
-    public Bank loadBank(InputStream bankStream) {
+    public SoundBank loadBank(InputStream bankStream) {
         executeOrDelay(() -> {
             try {
                 int length = bankStream.available();
@@ -121,12 +118,12 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
                 throw new RuntimeException("Failed to read and load bank data from InputStream", e);
             }
         });
-        return new Bank() {
+        return new SoundBank() {
         };
     }
 
     @Override
-    public Cue getCue(String s) {
+    public Event getEvent(String s) {
         Result<FMOD_Studio_EventDescription> resultDescription = new Result<>();
         final Result<FMOD_Studio_EventInstance> resultInstance = new Result<>();
 
@@ -135,19 +132,24 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
             resultDescription.getVal().createInstance(resultInstance);
         });
 
-        return new Cue() {
+        return new Event() {
             @Override
-            public void in() {
-                executeOrDelay(() -> {
-                    resultInstance.getVal().start();
-                });
-            }
+            public Cue getCue() {
+                return new Cue() {
+                    @Override
+                    public void in() {
+                        executeOrDelay(() -> {
+                            resultInstance.getVal().start();
+                        });
+                    }
 
-            @Override
-            public void out() {
-                executeOrDelay(() -> {
-                    resultInstance.getVal().stop(0);
-                });
+                    @Override
+                    public void out() {
+                        executeOrDelay(() -> {
+                            resultInstance.getVal().stop(0);
+                        });
+                    }
+                };
             }
         };
     }
@@ -157,8 +159,8 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
     }-*/;
 
     @Override
-    public Param getGlobalParam(String path) {
-        return new Param() {
+    public FloatParam getGlobalFloatParam(String path) {
+        return new FloatParam() {
             @Override
             public void set(float value) {
                 FMOD_System.setParameterByName(path, value, false);

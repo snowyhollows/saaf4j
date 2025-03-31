@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(':saaf4j-core')
+    api project(':saaf4j-core')
     implementation "org.gwtproject:gwt-user:2.12.0"
 
     testImplementation platform('org.junit:junit-bom:5.10.0')

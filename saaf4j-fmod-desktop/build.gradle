@@ -1,5 +1,15 @@
+project.ext.lwjglVersion = "3.3.6"
+project.ext.lwjglNatives = "natives-macos-arm64"
+
 dependencies {
+
+    implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    api project(':saaf4j-core')
+    implementation "org.lwjgl:lwjgl"
+    implementation "org.lwjgl:lwjgl-fmod"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
 }
 

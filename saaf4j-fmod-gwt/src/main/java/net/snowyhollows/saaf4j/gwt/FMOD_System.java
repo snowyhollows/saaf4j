@@ -1,11 +1,8 @@
 package net.snowyhollows.saaf4j.gwt;
 
 import com.google.gwt.typedarrays.shared.ArrayBuffer;
-import com.google.gwt.typedarrays.shared.TypedArrays;
-import com.google.gwt.typedarrays.shared.Uint8Array;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
-import net.snowyhollows.saaf4j.core.Bank;
 
 @JsType(isNative = true, namespace = JsPackage.GLOBAL)
 public class FMOD_System {
