@@ -9,6 +9,7 @@ import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.system.Platform;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Locale;
@@ -126,6 +127,12 @@ public class DesktopFmodAdaptiveAudio implements AdaptiveAudio {
         check(result);
     }
 
+    @Override
+    public void dispose() {
+        int result = FMODStudio.FMOD_Studio_System_Release(system);
+        check(result);
+    }
+
     private static void check(int result) {
         if (result != FMOD.FMOD_OK) {
             throw new RuntimeException("unexpected error: " + result);
@@ -144,7 +151,7 @@ public class DesktopFmodAdaptiveAudio implements AdaptiveAudio {
 
     private byte[] toByteBuffer(InputStream inputStream) {
         try {
-            java.io.ByteArrayOutputStream buffer = new java.io.ByteArrayOutputStream();
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
             byte[] temp = new byte[64 * 1024];
             int bytesRead;
             while ((bytesRead = inputStream.read(temp)) != -1) {

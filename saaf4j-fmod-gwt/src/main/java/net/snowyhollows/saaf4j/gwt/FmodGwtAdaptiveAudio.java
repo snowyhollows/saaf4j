@@ -15,6 +15,7 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
     private static final int STUDIO_LOAD_MEMORY = 0;
     private static final int STUDIO_LOAD_BANK_NORMAL = 0;
     private final ArrayList<Runnable> runnables = new ArrayList<>();
+    private final FmodGwtAdaptiveAudioConfiguration config;
 
     private enum State {
         INITIALIZING, NOT_READY, READY, ERROR;
@@ -24,6 +25,7 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
     private Exception reason;
 
     public FmodGwtAdaptiveAudio(FmodGwtAdaptiveAudioConfiguration config) {
+        this.config = config;
         init(config.initialMemorySize);
     }
 
@@ -31,7 +33,7 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
         assertNotError();
         if (state == State.NOT_READY) {
             state = State.INITIALIZING;
-            ScriptInjector.fromUrl(GWT.getModuleBaseForStaticFiles() + "scripts/fmodstudio.js")
+            ScriptInjector.fromUrl(config.fmodScriptPath)
                     .setCallback(new Callback<Void, Exception>() {
                         @Override
                         public void onFailure(Exception reason) {
@@ -188,6 +190,11 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
             return;
         }
         FMOD_System.update();
+    }
+
+    @Override
+    public void dispose() {
+        // noop; I think this is meaningless on GWT, where applications are not unloaded.
     }
 
     private void afterInit() {

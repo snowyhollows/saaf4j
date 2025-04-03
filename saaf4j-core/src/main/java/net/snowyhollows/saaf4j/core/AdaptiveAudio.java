@@ -13,4 +13,6 @@ public interface AdaptiveAudio {
     boolean isReady();
 
     void update(float deltaTime);
+
+    void dispose();
 }
