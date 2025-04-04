@@ -1,7 +1,6 @@
 package net.snowyhollows.saaf4j.gwt;
 
 import com.google.gwt.core.client.Callback;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.ScriptInjector;
 import com.google.gwt.typedarrays.shared.Uint8Array;
 import com.google.gwt.user.client.Timer;
@@ -11,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
+public class AdaptiveAudioFmodGwt implements AdaptiveAudio {
     private static final int STUDIO_LOAD_MEMORY = 0;
     private static final int STUDIO_LOAD_BANK_NORMAL = 0;
     private final ArrayList<Runnable> runnables = new ArrayList<>();
@@ -24,7 +23,7 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
     private static State state = State.NOT_READY;
     private Exception reason;
 
-    public FmodGwtAdaptiveAudio(FmodGwtAdaptiveAudioConfiguration config) {
+    public AdaptiveAudioFmodGwt(FmodGwtAdaptiveAudioConfiguration config) {
         this.config = config;
         init(config.initialMemorySize);
     }
@@ -38,7 +37,7 @@ public class FmodGwtAdaptiveAudio implements AdaptiveAudio {
                         @Override
                         public void onFailure(Exception reason) {
                             state = State.ERROR;
-                            FmodGwtAdaptiveAudio.this.reason = reason;
+                            AdaptiveAudioFmodGwt.this.reason = reason;
                         }
 
                         @Override

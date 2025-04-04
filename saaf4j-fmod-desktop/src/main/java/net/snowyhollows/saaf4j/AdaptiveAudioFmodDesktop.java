@@ -14,12 +14,12 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Locale;
 
-public class DesktopFmodAdaptiveAudio implements AdaptiveAudio {
+public class AdaptiveAudioFmodDesktop implements AdaptiveAudio {
 
     MemoryStack stack = MemoryStack.stackPush();
     private final long system;
 
-    public DesktopFmodAdaptiveAudio() {
+    public AdaptiveAudioFmodDesktop() {
         String module = "net/snowyhollows/saaf4j";
         Configuration.FMOD_LIBRARY_NAME.set(resourcePath("fmod", module));
         Configuration.FMOD_STUDIO_LIBRARY_NAME.set(resourcePath("fmodstudio", module));
